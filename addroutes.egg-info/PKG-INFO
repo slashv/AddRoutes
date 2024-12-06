@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: addroutes
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mido>=1.3.3
+Requires-Dist: oscpy>=0.6.0
+Requires-Dist: python-rtmidi>=1.5.8
+
+# AddRoutes
+A Blender Add-on allowing MIDI, OSC and a remote Android App to control Blender 2.8/2.9/3.0
+
+If you are a user, see the Download section here to get a ready-to-go file : http://www.jpfep.net/pages/addroutes/
+
+If you want to participate to the development, theses sources files need some additionnal libraries to function properly, consequently you have to install them on your system :
+
+
+    Python-RTMIDI: http://trac.chrisarndt.de/code/wiki/python-rtmidi
+    MIDO : https://github.com/mido/mido
+    OSCPY: https://github.com/kivy/oscpy

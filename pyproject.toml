@@ -1,0 +1,16 @@
+[project]
+name = "addroutes"
+version = "0.32"
+description = "Realtime interactions with Blender (MIDI, OSC, smartphone App)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mido>=1.3.3",
+    "oscpy>=0.6.0",
+    "python-rtmidi>=1.5.8",
+]
+
+[tool.setuptools]
+packages = [
+    "addroutes",
+]
