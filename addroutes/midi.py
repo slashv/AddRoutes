@@ -91,7 +91,7 @@ def get_ctx_scene():
 
 
 def actua_timer():
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     scn = bpy.data.window_managers[0].windows[0].scene
 
     if g_vars.midiin is not None and scn is not None:

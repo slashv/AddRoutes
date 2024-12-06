@@ -251,7 +251,7 @@ def encode(chan, cont_type):
 
 def yield_all_routes():
     n = 0
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
 
     len1 = len(bpy.context.scene.MOM_Items)
     len2 = len(prefs.AddR_System_Routes)

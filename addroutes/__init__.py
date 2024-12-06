@@ -200,7 +200,7 @@ class AddR_Items_PG(bpy.types.PropertyGroup):
             ('name', 'in name', 'in name', '', 0),
             ('dp', 'in data-path', 'in data-path', '', 1)
         ],
-        update=generate_dict) 
+        update=generate_dict)
     name_var: bpy.props.StringProperty(name='Base name', default='name_VAR', update=generate_dict)
     offset: bpy.props.IntProperty(name="Offset ", default=0, update=generate_dict)
 

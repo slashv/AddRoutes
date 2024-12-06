@@ -163,7 +163,7 @@ def addroutes_restore_handler(scene):
     #bpy.ops.addroutes.refresh_devices()
 
     bcw = bpy.context.window_manager
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
 
     # bcw.addroutes_midi_in_enum = bcw.addroutes_midi_in_device
     # bcw.addroutes_midi_out_enum = bcw.addroutes_midi_out_device

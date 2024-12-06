@@ -52,7 +52,7 @@ def update_midi_in(self, context):
     if g_vars.midi_update_inh:
         return
 
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
     if bcw.addroutes_midi_settings == 'Project':
         bcw.addroutes_midi_in_device = bcw.addroutes_midi_in_enum
@@ -74,7 +74,7 @@ def update_midi_out(self, context):
     if g_vars.midi_update_inh:
         return
 
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
     if bcw.addroutes_midi_settings == 'Project':
         bcw.addroutes_midi_out_device = bcw.addroutes_midi_out_enum
@@ -126,7 +126,7 @@ def set_midiout(self, context):
 def refresh_devices(self, context):
     global midi_in_list, midi_out_list, midi_in_sys_list, midi_out_sys_list
     bcw = bpy.context.window_manager
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
 
     # for input
     m_in_ports = g_vars.midiin.get_ports()
@@ -198,7 +198,7 @@ class AddRoutes_RefreshDevices(bpy.types.Operator):
 
     def execute(self, context):
         bcw = bpy.context.window_manager
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         refresh_devices(self, context)
         g_vars.midi_update_inh = True
         try:

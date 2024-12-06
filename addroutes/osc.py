@@ -78,7 +78,7 @@ def set_props(item, bl_item, val):
 
 
 def actua_osc_timer():
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
 
     in_len = len(g_vars.osc_queue)
     if in_len > prefs.overflow:

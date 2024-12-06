@@ -48,7 +48,7 @@ def redraw_hack():
 
 def retry_server():
     global blem_server, bl_ok
-    pref = bpy.context.preferences.addons['AddRoutes'].preferences
+    pref = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
     ip = pref.blemote_udp_in
     port = pref.blemote_port_in
@@ -78,7 +78,7 @@ def retry_server():
 
 def blemote_poll():
     global auto_port_out, auto_udp_out, stored, upd_cnt, blem_cnt
-    pref = bpy.context.preferences.addons['AddRoutes'].preferences
+    pref = bpy.context.preferences.addons[__package__].preferences
     if pref.blemote_autoconf:
         udp_out = auto_udp_out
         port_out = auto_port_out

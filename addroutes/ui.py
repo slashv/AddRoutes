@@ -41,7 +41,7 @@ class VIEW3D_PT_AddRoutes_MIDI_Config(Panel):
     bl_options = {'DEFAULT_CLOSED'}
 
     def draw(self, context):
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         layout = self.layout
 
         box = layout.box()
@@ -114,7 +114,7 @@ class VIEW3D_PT_AddRoutes_OSC_Config(Panel):
     bl_options = {'DEFAULT_CLOSED'}
 
     def draw(self, context):
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         layout = self.layout
         box = layout.box()
         col = box.column()
@@ -179,7 +179,7 @@ class VIEW3D_PT_AddRoutes_Blemote_Config(Panel):
 
     def draw(self, context):
         layout = self.layout
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         box = layout.box()
         box.label(text="Blemote Settings:")
         box.prop(prefs, "blemote_enable")
@@ -354,7 +354,7 @@ def show_routes(context, layout, item, i, route_type):
         # split = row.split(factor=.8)
         # row_dp = split.row(align=True)
         '''
-     
+
         split2 = box.split(factor=0.8)
         row_e = split2.row(align=True)
         row_e2 = split2.row(align=True)
@@ -362,7 +362,7 @@ def show_routes(context, layout, item, i, route_type):
             row_e2.prop(item, 'blem_switch', text='BL')
         else:
             row_e2.prop(item, 'record', text='Rec', icon='RADIOBUT_ON')
-    
+
         '''
 
         col = box.column()
@@ -505,7 +505,7 @@ class VIEW3D_PT_AddR_Sys_Routes(Panel):
     bl_options = {'DEFAULT_CLOSED'}
 
     def draw(self, context):
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         layout = self.layout
         col = layout.column(align=True)
 
@@ -542,7 +542,7 @@ class AddR_AddSysRoutes(bpy.types.Operator):
     bl_options = {'UNDO'}
 
     def execute(self, context):
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         my_item = addaroute(prefs.AddR_System_Routes)
         my_item.cont_type = 'key_on'
         return{'FINISHED'}
@@ -569,9 +569,9 @@ class AddRoutes_RemoveSysRoute(bpy.types.Operator):
     bl_options = {'UNDO'}
 
     n: bpy.props.IntProperty()
-    
+
     def execute(self, context):
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         prefs.AddR_System_Routes.remove(self.n)
         generate_dict(self, context)
         return{'FINISHED'}
@@ -621,7 +621,7 @@ class AddRoutes_CopySysProp(bpy.types.Operator):
     n: bpy.props.IntProperty()
 
     def execute(self, context):
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
         my_item = addaroute(prefs.AddR_System_Routes)
         for k, v in prefs.AddR_System_Routes[self.n].items():
             if k != 'perma_rank':
@@ -939,7 +939,7 @@ class AddRoutes_DebugInfo(bpy.types.Operator):
 
     def execute(self, context):
         g_vars.debugcopy(self, context)
-        prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+        prefs = bpy.context.preferences.addons[__package__].preferences
 
         if prefs.debug_timestamp:
             msg = time.strftime("%H:%M:%S", time.localtime()) + ': ' + self.msg

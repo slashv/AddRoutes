@@ -61,7 +61,7 @@ def update_osc_mode(self, context):
 
 
 def update_osc_in_enable(self, context):
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
 
     if bcw.addroutes_osc_settings == 'Project':
@@ -71,7 +71,7 @@ def update_osc_in_enable(self, context):
 
 
 def update_osc_out_enable(self, context):
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
 
     if bcw.addroutes_osc_settings == 'Project':
@@ -83,7 +83,7 @@ def update_osc_out_enable(self, context):
 def update_osc_in(self, context):
     global osc_in_ok, osc_server, osc_in_ok, ip, port
 
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
 
     osc_in_ok = False
@@ -98,7 +98,7 @@ def update_osc_in(self, context):
 
 
 def update_osc_out(self, context):
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     bcw = bpy.context.window_manager
 
     if bcw.addroutes_osc_settings == 'Project':

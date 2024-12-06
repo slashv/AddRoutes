@@ -33,7 +33,7 @@ from .load_save import save_settings
 
 
 def actua_bl():
-    prefs = bpy.context.preferences.addons['AddRoutes'].preferences
+    prefs = bpy.context.preferences.addons[__package__].preferences
     in_len = len(g_vars.blemote_fb)
 
     if in_len > prefs.overflow:
