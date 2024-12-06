@@ -219,7 +219,7 @@ def parse_route(item, k=0):
         ks_options.add('INSERTKEY_CYCLE_AWARE')
 
 
-    if item.kf_group is not '':
+    if item.kf_group != '':
         ks_params = {'options': ks_options, 'group': item.kf_group}
     else:
         ks_params = {'options': ks_options}
