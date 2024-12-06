@@ -7,6 +7,8 @@ description = "Allow MIDI, OSC and a remote Android App to control Blender 4.2"
 warning = ""
 doc_url = ""
 tracker_url = ""
+category = "System"
+
 license = [
     "SPDX:GPL-2.0-or-later",
 ]
