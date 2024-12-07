@@ -1,7 +1,7 @@
 # AddRoutes
 A Blender Add-on allowing MIDI, OSC and a remote Android App to control Blender 4.2.
 
-Just download this repo as a zip file and install from file.
+To install download the zip from the 0.33 release or just download repo as zip.
 
 For earlier versions of Blender see the download section at: http://www.jpfep.net/pages/addroutes/
 
